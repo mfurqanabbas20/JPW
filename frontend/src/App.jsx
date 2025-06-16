@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='/home' element={<Home/>} />
+      <Route path='/' element={<Home/>} />
       <Route path='/product/:id' element={<Product/>} />
       <Route path='/all-products' element={<AllProducts/>} />
       <Route path='/product/order-successful' element={<OrderConfirm/>} />

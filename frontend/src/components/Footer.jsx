@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className='flex mt-20 mb-6'>
         <div className="footer-logo-section w-1/3 flex flex-col justify-between px-5 max-md:hidden">
-            <Link to='/home' className="logo">
+            <Link to='/' className="logo">
                 <img src={JPW} alt='Truck Image' className='h-20 w-28 object-cover'/>
             </Link>
             <div className="description">
