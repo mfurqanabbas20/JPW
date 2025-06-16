@@ -6,7 +6,7 @@ const UserInfo = ({product, productQuantity}) => {
   const [countries, setCountries] = useState([])
   
   const fetchCountries = async () => {
-    const response = await axios.get('https://restcountries.com/v3.1/all')
+    const response = await axios.get('https://restcountries.com/v3.1/all?fields=name')    
     setCountries(response.data)
   }
 

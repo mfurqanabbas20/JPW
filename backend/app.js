@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const orderRouter = require('./routes/orderRoute')
 const cors = require('cors')

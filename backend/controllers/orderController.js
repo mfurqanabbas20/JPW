@@ -3,6 +3,7 @@ const orderModel = require('../models/orderModel')
 const productModel = require('../models/productModel')
 const {sendMail} = require('../util/sendMail')
 
+
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const createCheckout = async (req, res) => {    
