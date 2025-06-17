@@ -7,8 +7,8 @@ import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className='flex mt-20 mb-6'>
-        <div className="footer-logo-section w-1/3 flex flex-col justify-between px-5 max-md:hidden">
+    <div className='flex mt-20 mb-6 poppins p-0 max-md:flex-none'>
+        <div className="footer-logo-section w-1/3 flex flex-col justify-between px-5 max-md:px-0 max-md:hidden">
             <Link to='/' className="logo">
                 <img src={JPW} alt='Truck Image' className='h-20 w-28 object-cover'/>
             </Link>
@@ -22,18 +22,17 @@ const Footer = () => {
                 <img className='size-5' src={linkedin} alt="" />
             </div>
         </div>
-        <div className="footer-sections-container w-full flex justify-around flex-wrap gap-5 max-md:w-screen max-md:text-center">
-        <div className="footer-section w-64 max-md:flex max-md:flex-col max-md:items-center">
+        <div className="footer-sections-container w-full flex justify-around flex-wrap gap-5 max-md:w-screen max-md:text-center max-sm:justify-center">
+        <div className="footer-section w-1/4 max-md:flex max-md:flex-col max-md:items-center max-sm:w-96">
             <h1 className='font-bold text-lg'>About Us</h1>
-            <ul className='text-md opacity-70 flex flex-col gap-3 mt-4'>
+            <ul className='text-md opacity-70 flex flex-col gap-3 mt-4 text-sm'>
                 <li className='cursor-pointer'>Who We Are</li>
                 <li className='cursor-pointer'>What We Do</li>
                 <li className='cursor-pointer'>Our Impact</li>
                 <Link to='/all-products'>JPW Products</Link>
-                {/* <li className='cursor-pointer'>JPW Products</li> */}
             </ul>
         </div>
-        <div className="footer-section w-64 max-md:flex max-md:flex-col max-md:items-center">
+        <div className="footer-section w-1/4 max-md:flex max-md:flex-col max-md:items-center text-sm max-sm:w-96">
             <h1 className='font-bold text-lg'>Media</h1>
             <ul className='text-md opacity-70 flex flex-col gap-3 mt-4'>
                 <li className='cursor-pointer'>News & Updates</li>
@@ -41,7 +40,7 @@ const Footer = () => {
                 <li className='cursor-pointer'>Media Kit</li>
             </ul>
         </div>
-        <div className="footer-section w-64 max-md:flex max-md:flex-col max-md:items-center">
+        <div className="footer-section w-1/4 max-md:flex max-md:flex-col max-md:items-center text-sm max-sm:w-96">
             <h1 className='font-bold text-lg'>Contact</h1>
             <ul className='text-md opacity-70 flex flex-col gap-3 mt-4'>
                 <li className='cursor-pointer'>New Delhi, Pakistan</li>

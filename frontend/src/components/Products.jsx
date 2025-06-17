@@ -15,8 +15,8 @@ const Products = () => {
 
   return (
     <div className='px-28 pt-6 pb-10 bg-slate-50 w-full max-md:px-10'>
-        <h1 className='text-3xl font-bold text-blue-600 my-2'>Top Products</h1>
-        <h1 className='text-xl'>VBR</h1>
+        <h1 className='text-3xl font-bold text-blue-600 my-2 poppins'>Top Products</h1>
+        <h1 className='text-xl poppins'>VBR</h1>
         <hr className='my-4 border-gray-300' />
         <div className='flex gap-4 flex-wrap w-full'>
         {products.map((item) => {
