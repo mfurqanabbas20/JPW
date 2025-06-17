@@ -20,6 +20,11 @@ app.use(express.static(path.join(__dirname, 'uploads')))
 app.use('/api/order', orderRouter)
 app.use('/api/product', productRouter)
 
+app.use('/', (req, res) => {
+    return res.status(200).json("Hello World")
+})
+
+
 // to connect to db
 connectDB()
 
