@@ -33,8 +33,8 @@ const createCheckout = async (req, res) => {
             payment_method_types: ["card"],
             line_items: lineItems,
             mode: "payment",
-            success_url: "http://localhost:5173/product/order-successful",
-            cancel_url: "http://localhost:5173/admin"
+            success_url: "https://jpw-store.vercel.app/product/order-successful",
+            cancel_url: "https://jpw-store.vercel.app/admin"
         })
         return res.status(200).json({success: true, id: session.id})
     } catch (error) {
