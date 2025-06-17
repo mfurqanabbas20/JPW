@@ -8,7 +8,7 @@ import HotSelling from "../components/HotSelling"
 const AllProducts = () => {
     const [products, setProducts] = useState([])
       const fetchProducts = async () => {
-        const response = await axios.get('http://localhost:5000/api/product/all-products')    
+        const response = await axios.get('https://jpw-flax.vercel.app/api/product/all-products')    
         setProducts(response.data.products.reverse())
       }
       useEffect(() => {
@@ -24,7 +24,7 @@ const AllProducts = () => {
          {products.map((item) => {
           return(
           <div className='product-card w-48 bg-white px-2 py-4 cursor-pointer'>
-            <img className='w-72 h-56' src={`http://localhost:5000/${item?.productImage}`} alt="" />
+            <img className='w-72 h-56' src={`https://jpw-flax.vercel.app/${item?.productImage}`} alt="" />
             <h1>{item.productName}</h1>
             <hr className='my-4 border-gray-300' />
             <div className='flex items-center justify-center'>

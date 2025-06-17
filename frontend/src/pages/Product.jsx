@@ -19,7 +19,7 @@ const Product = () => {
   const fetchProduct = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/product/single-product/${params.id}`
+        `https://jpw-flax.vercel.app/api/product/single-product/${params.id}`
       );
       setProduct(response.data.product);
     } catch (error) {
@@ -54,7 +54,7 @@ const Product = () => {
                 <div className="product-upper flex z-10 max-md:flex-col max-md:w-full">
                   <div className="product-image w-1/2 max-md:w-full">
                     {/* image of product */}
-                    <img src={`http://localhost:5000/${product?.productImage}`} className="w-96 max-md:w-full" alt="" />
+                    <img src={`https://jpw-flax.vercel.app/${product?.productImage}`} className="w-96 max-md:w-full" alt="" />
                   </div>
                   <div className="product-overview bg-slate-100 p-4 w-1/2 max-md:w-full">
                     {/* overview of product */}

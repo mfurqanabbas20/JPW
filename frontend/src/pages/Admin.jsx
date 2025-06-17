@@ -39,7 +39,7 @@ const AddProduct = () => {
       formData.append('productImage', product.productImage)
       formData.append('productPrice', product.productPrice)
       formData.append('productAvailableQuantity', product.productAvailableQuantity)
-      const response = await axios.post('http://localhost:5000/api/product/add-product', formData)
+      const response = await axios.post('https://jpw-flax.vercel.app/api/product/add-product', formData)
       toast.success('Product Added', {
         position: 'bottom-left',
         autoClose: true
@@ -168,7 +168,7 @@ const Admin = () => {
 
   const fetchOrders = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/order/get-orders"
+      "https://jpw-flax.vercel.app/api/order/get-orders"
     );
     setOrders(response.data.orders.reverse());
   };
@@ -179,7 +179,7 @@ const Admin = () => {
 
   const updateStatus = async (order, e) => {
     const value = e.target.value
-    await axios.put(`http://localhost:5000/api/order/update-status/${order._id}`, {value})
+    await axios.put(`https://jpw-flax.vercel.app/api/order/update-status/${order._id}`, {value})
   }
 
   return (

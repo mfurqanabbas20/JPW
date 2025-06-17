@@ -5,7 +5,7 @@ import axios from 'axios'
 const Products = () => {
   const [products, setProducts] = useState([])
   const fetchProducts = async () => {
-    const response = await axios.get('http://localhost:5000/api/product/all-products')    
+    const response = await axios.get('https://jpw-flax.vercel.app/api/product/all-products')    
     setProducts(response.data.products.reverse())
   }
 
@@ -23,7 +23,7 @@ const Products = () => {
           return(
           <div className='product-card w-1/4 max-sm:w-full max-lg:w-1/3 bg-white px-2 py-4 cursor-pointer flex flex-col justify-between'>
             <div>
-            <img className='w-full h-56 object-contain' src={`http://localhost:5000/${item?.productImage}`} alt="" />
+            <img className='w-full h-56 object-contain' src={`https://jpw-flax.vercel.app/${item?.productImage}`} alt="" />
             <h1 className='w-full'>{item.productName}</h1>
             </div>
             <div>

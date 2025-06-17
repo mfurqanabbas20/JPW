@@ -8,7 +8,7 @@ const OrderConfirm = () => {
   
   const placeOrder = async () => {
     try {
-      const response = await axios.post(`http://localhost:5000/api/order/create-order/${data.product._id}`, data.order)
+      const response = await axios.post(`https://jpw-flax.vercel.app/api/order/create-order/${data.product._id}`, data.order)
       toast.success('Ordered Confirmed', {
         position: 'bottom-left',
         autoClose: '2000'
