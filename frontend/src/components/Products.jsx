@@ -21,10 +21,10 @@ const Products = () => {
         <div className='flex gap-4 flex-wrap w-full'>
         {products.map((item) => {
           return(
-          <div className='product-card w-48 max-sm:w-full bg-white px-2 py-4 cursor-pointer flex flex-col justify-between'>
+          <div className='product-card w-1/4 max-sm:w-full max-lg:w-1/3 bg-white px-2 py-4 cursor-pointer flex flex-col justify-between'>
             <div>
-            <img className='w-72 h-56' src={`http://localhost:5000/${item?.productImage}`} alt="" />
-            <h1>{item.productName}</h1>
+            <img className='w-full h-56 object-contain' src={`http://localhost:5000/${item?.productImage}`} alt="" />
+            <h1 className='w-full'>{item.productName}</h1>
             </div>
             <div>
               <hr className='my-4 border-gray-300' />

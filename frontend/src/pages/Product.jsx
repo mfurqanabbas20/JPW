@@ -36,7 +36,7 @@ const Product = () => {
   return (
     <>
       <Navbar />
-      <div className="px-20 mt-10 max-md:px-10">
+      <div className="px-20 mt-10 max-md:px-4 max-md:mt-5">
         {openForm ? (
           <UserInfo
             product = {product}
@@ -51,7 +51,7 @@ const Product = () => {
             :
              (
               <>
-                <div className="product-upper flex z-10 max-md:flex-col max-md:w-screen">
+                <div className="product-upper flex z-10 max-md:flex-col max-md:w-full">
                   <div className="product-image w-1/2 max-md:w-full">
                     {/* image of product */}
                     <img src={`http://localhost:5000/${product?.productImage}`} className="w-96 max-md:w-full" alt="" />
@@ -80,30 +80,7 @@ const Product = () => {
                         system.
                       </li>
                     </ul>
-                    {/* <div className="prices-container flex gap-8">
-                      <div
-                        onClick={() => setSelectedVariant("1-999")}
-                        className={`${
-                          selectedVariant === "1-999"
-                            ? "bg-blue-500 prices mt-5 p-4 cursor-pointer rounded-md text-white"
-                            : "prices mt-5 p-4 cursor-pointer"
-                        }`}
-                      >
-                        <p className="text-sm opacity-70">1 - 999 pieces</p>
-                        <h1 className="text-xl font-bold">£{product?.productPrice}</h1>
-                      </div>
-                      <div
-                        onClick={() => setSelectedVariant("1000-2499")}
-                        className={`${
-                          selectedVariant === "1000-2499"
-                            ? "bg-blue-500 prices mt-5 p-4 cursor-pointer rounded-md text-white"
-                            : "prices mt-5 p-4 cursor-pointer"
-                        }`}
-                      >
-                        <p className="text-sm opacity-70">1000 - 2499 pieces</p>
-                        <h1 className="text-xl font-bold">£{product?.productPrice - product?.productPrice * 0.05}</h1>
-                      </div>
-                    </div> */}
+                 
                     <div className="flex flex-col gap-2 mt-4">
                       <label className="text-sm font-bold" htmlFor="productQuantity">Quantity*</label>
                       <input

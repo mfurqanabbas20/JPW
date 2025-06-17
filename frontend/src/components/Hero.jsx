@@ -38,7 +38,7 @@ const Hero = () => {
       <Slide autoplay duration={5000} transitionDuration={1000} easing='ease' infinite>
          {slideImages.map((slideImage, index)=> (
             <div className='' key={index}>
-              <div className='' style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
+              <div className='bg-contain' style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
                 {/* <h1 style={{color: slideImage.color}} className='slideshow-text flex w-full justify-center mt-10 text-6xl font-bold px-2'>{slideImage.caption}</h1> */}
               </div>
             </div>
