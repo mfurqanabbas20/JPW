@@ -47,6 +47,7 @@ const Product = () => {
             {loading ?
             <div>
               {/* for loader, spinner */}
+              <h1 className="text-2xl">Loading</h1>
             </div>
             :
              (

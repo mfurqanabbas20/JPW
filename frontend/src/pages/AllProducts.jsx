@@ -4,13 +4,25 @@ import axios from 'axios'
 import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
 import HotSelling from "../components/HotSelling"
+import { RotatingTriangles } from 'react-loader-spinner'
 
 const AllProducts = () => {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(false)
+
       const fetchProducts = async () => {
-        const response = await axios.get('https://jpw-flax.vercel.app/api/product/all-products')    
-        setProducts(response.data.products.reverse())
+        setLoading(true)
+        try {
+          const response = await axios.get('https://jpw-flax.vercel.app/api/product/all-products')    
+          setProducts(response.data.products.reverse())
+        } catch (error) {
+          console.log(error);
+        }
+        finally {
+          setLoading(false)
+        }
       }
+
       useEffect(() => {
         fetchProducts()
       }, [])
@@ -18,8 +30,24 @@ const AllProducts = () => {
   return (
     <div className='all-products'>
         <Navbar/>
-        <div className="mx-8">
-        <h1 className="text-2xl font-bold my-3">All Products</h1>
+        <h1 className="text-2xl font-bold my-3 mx-8">All Products</h1>
+        <div className="">
+        {
+        loading
+        ?
+        <div className="flex items-center justify-center mx-8">
+        <RotatingTriangles
+           visible={true}
+           height="80"
+           width="80"
+           color="#4fa94d"
+           ariaLabel="rotating-triangles-loading"
+           wrapperStyle={{}}
+           wrapperClass=""
+         />
+        </div>
+        :
+        <>
         <div className="flex gap-4 flex-wrap">
          {products.map((item) => {
           return(
@@ -35,7 +63,11 @@ const AllProducts = () => {
         })}
         </div>
         <HotSelling/>
+        </>
+        }
+    
         </div>
+        
         <Footer/>
     </div>
   )
