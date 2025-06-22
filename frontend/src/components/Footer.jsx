@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='flex mt-20 py-6 poppins p-0 max-md:flex-none bg-blue-900 text-white'>
-        <div className="footer-sections-container w-fullflex justify-around max-md:flex-wrap gap-5 max-md:w-screen max-md:text-center max-sm:justify-center">
+        <div className="footer-sections-container w-full flex justify-around max-md:flex-wrap gap-5 max-md:w-screen max-md:text-center max-sm:justify-center">
          <div className="footer-logo-section w-1/4 max-md:w-full flex flex-col justify-between max-md:items-center px-5 max-md:px-0">
             <Link to='/' className="logo">
                 <img src={JPW} alt='Truck Image' className='h-20 w-28 object-cover'/>
