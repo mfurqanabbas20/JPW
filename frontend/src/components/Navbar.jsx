@@ -31,11 +31,12 @@ const Navbar = () => {
         }
         <div className="nav-items text-md max-md:hidden">
             <ul className='flex gap-6 cursor-pointer'>
-                <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>Home</Link>
-                <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>About Us</Link>
-                <Link className='hover:bg-blue-200 rounded-sm p-3' to='/all-products'>Products</Link>
-                <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>Services</Link>
-                <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>Contact Us</Link>
+              <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>Home</Link>
+              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#about'>About Us</Link>
+              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/all-products'>Products</Link>
+              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#services'>Services</Link>
+              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#contact'>Contact Us</Link>
+                
             </ul>
         </div>
 

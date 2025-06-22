@@ -16,7 +16,7 @@ const HotSelling = () => {
   return (
     <div className=''>
         <div className='flex flex-col items-center justify-center'>
-            <h1 className='text-4xl font-bold text-blue-700'>HOT SELLING</h1>
+            <h1 className='text-4xl font-bold text-blue-700 hero-heading'>HOT SELLING</h1>
             <hr className='w-56 mt-1 text-blue-300 border-2' />
         </div>
         <div className="gallery flex my-6">

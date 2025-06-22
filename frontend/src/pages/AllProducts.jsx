@@ -30,8 +30,8 @@ const AllProducts = () => {
   return (
     <div className='all-products'>
         <Navbar/>
-        <h1 className="text-2xl font-bold my-3 mx-8">All Products</h1>
-        <div className="">
+        <h1 className="text-2xl font-bold my-3 mx-8 poppins">All Products</h1>
+        <div className="poppins">
         {
         loading
         ?
@@ -48,16 +48,21 @@ const AllProducts = () => {
         </div>
         :
         <>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-4 flex-wrap px-8">
          {products.map((item) => {
           return(
-          <div className='product-card w-48 bg-white px-2 py-4 cursor-pointer'>
-            <img className='w-72 h-56' src={`https://jpw-flax.vercel.app/${item?.productImage}`} alt="" />
-            <h1>{item.productName}</h1>
+           <div className='product-card w-1/4 max-sm:w-full max-lg:w-1/3 bg-white px-2 py-4 cursor-pointer flex flex-col justify-between'>
+            <div className="flex flex-col gap-2">
+            <img className='w-full h-56 object-cover' src={`https://jpw-flax.vercel.app/${item?.productImage}`} alt="" />
+            <h1 className='w-full text-sm'>{item.productName}</h1>
+            </div>
+            <div>
             <hr className='my-4 border-gray-300' />
             <div className='flex items-center justify-center'>
                 <Link className='cursor-pointer text-blue-600 uppercase border border-blue-500 px-2 py-1' to={`/product/${item._id}`}>View More</Link>
             </div>
+            </div>
+
           </div>
           ) 
         })}
@@ -67,7 +72,6 @@ const AllProducts = () => {
         }
     
         </div>
-        
         <Footer/>
     </div>
   )
