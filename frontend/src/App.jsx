@@ -1,15 +1,29 @@
 import Home from './pages/Home'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, useLocation} from 'react-router-dom'
 import Product from './pages/Product'
 import OrderConfirm from './pages/OrderConfirm'
 import Admin from './pages/Admin'
 import AllProducts from './pages/AllProducts'
 import { ToastContainer } from 'react-toastify'
+import { useEffect } from 'react'
+
+function ScrollToHashElement() {  
+  const location = useLocation()
+  useEffect(() => {
+    console.log('Location', location);
+    if(location.pathname === '/' && location.hash){
+      const element = document.getElementById(location.hash.substring(1))
+      element.scrollIntoView({behavior: 'smooth'})
+    }
+  }, [location])
+  return null
+}
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+    <ScrollToHashElement/>
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/product/:id' element={<Product/>} />
@@ -19,8 +33,7 @@ function App() {
       <Route path='/admin/add-products' element={<Admin/>} />
     </Routes>
     <ToastContainer />
-    </BrowserRouter>
-
+    </>
   )
 }
 

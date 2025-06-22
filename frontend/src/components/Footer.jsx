@@ -32,7 +32,7 @@ const Footer = () => {
                 <Link to='/all-products'>JPW Products</Link>
             </ul>
         </div>
-        <div className="footer-section w-1/4 max-md:flex max-md:flex-col max-md:items-center text-sm max-sm:w-96">
+        <div id='contact' className="footer-section w-1/4 max-md:flex max-md:flex-col max-md:items-center text-sm max-sm:w-96">
             <h1 className='font-bold text-lg'>Media</h1>
             <ul className='text-md opacity-70 flex flex-col gap-3 mt-4'>
                 <li className='cursor-pointer'>News & Updates</li>

@@ -6,7 +6,7 @@ import hours from '../assets/24-hours.png'
 
 const Services = () => {
   return (
-    <div className='my-10 max-sm:px-2'>
+    <div id='services' className='my-10 max-sm:px-2'>
         <h1 className='text-2xl text-center font-bold poppins'>Services</h1>
         <p className='text-sm text-center opacity-60'>From lightning-fast delivery to secure payments and 24/7 support.</p>
         <div className="card-container flex flex-wrap items-center justify-center gap-2 my-3">

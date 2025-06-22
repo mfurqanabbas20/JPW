@@ -1,7 +1,7 @@
 import store1 from '../assets/about.jpg'
 const About = () => {
   return (
-   <div className='max-md:px-4'>
+   <div id='about' className='max-md:px-4'>
     <h1 className='poppins text-2xl font-bold max-md:text-center my-4 px-[104px]'>About Us</h1>
     <div className='flex justify-center max-md:flex-col-reverse'>
         <div className="about-content w-1/2 flex flex-col justify-between max-md:w-full max-md:items-center">
