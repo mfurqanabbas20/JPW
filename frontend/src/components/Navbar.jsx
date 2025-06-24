@@ -9,9 +9,9 @@ const Navbar = () => {
   }, [selectedHam])
 
   return (
-    <div className='flex items-center w-full justify-between px-10 max-sm:w-full max-sm:justify-between poppins'>
+    <div className='flex items-center w-full justify-between px-10 max-sm:w-full max-sm:justify-between poppins bg-slate-200/50'>
         <Link to='/' className="logo">
-            <img className='h-20 w-28 object-cover' src={JPW} alt="" />
+            <img className='h-20 w-28 object-cover' src={JPW} alt="Logo Image" />
         </Link>
         <div className='md:hidden'>
         <i onClick={() => setSelectedHam(!selectedHam)} className={`${!selectedHam ? "fa-solid fa-bars" : "fa-solid fa-xmark"}`}></i>
@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#about'>About Us</Link>
             <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/all-products'>Products</Link>
             <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#services'>Services</Link>
-            <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#contact'>Contact Us</Link>
+            <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/contact-us'>Contact Us</Link>
         </ul>
         :
         ""
@@ -35,7 +35,7 @@ const Navbar = () => {
               <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#about'>About Us</Link>
               <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/all-products'>Products</Link>
               <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#services'>Services</Link>
-              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#contact'>Contact Us</Link>
+              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/contact-us'>Contact Us</Link>
                 
             </ul>
         </div>
