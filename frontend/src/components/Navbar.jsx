@@ -9,7 +9,7 @@ const Navbar = () => {
   }, [selectedHam])
 
   return (
-    <div className='flex items-center w-full justify-between px-10 max-sm:w-full max-sm:justify-between'>
+    <div className='flex items-center w-full justify-between px-10 max-sm:w-full max-sm:justify-between poppins'>
         <Link to='/' className="logo">
             <img className='h-20 w-28 object-cover' src={JPW} alt="" />
         </Link>
