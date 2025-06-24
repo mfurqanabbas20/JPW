@@ -50,22 +50,42 @@ const AllProducts = () => {
         <>
         <div className="flex gap-4 flex-wrap px-8">
          {products.map((item) => {
-          return(
-           <div className='product-card w-1/4 max-sm:w-full max-lg:w-1/3 bg-white px-2 py-4 cursor-pointer flex flex-col justify-between'>
-            <div className="flex flex-col gap-2">
-            <img className='w-full h-56 object-cover' src={`https://jpw-flax.vercel.app/${item?.productImage}`} alt="" />
-            <h1 className='w-full text-sm'>{item.productName}</h1>
-            </div>
-            <div>
-            <hr className='my-4 border-gray-300' />
-            <div className='flex items-center justify-center'>
-                <Link className='cursor-pointer text-blue-600 uppercase border border-blue-500 px-2 py-1 poppins text-sm' to={`/product/${item._id}`}>View More</Link>
-            </div>
-            </div>
+          return (
+            <div
+              key={item._id}
+              className="product-card w-[30%] max-sm:w-full max-lg:w-1/2 cursor-pointer transition-transform duration-300 hover:scale-105"
+            >
+              <div className="bg-white rounded-xl shadow-lg flex flex-col justify-between h-full overflow-hidden">
+                <div>
+                  <img
+                    className="w-full h-56 object-contain mb-4 rounded-t-xl"
+                    src={`https://jpw-flax.vercel.app/${item?.productImage}`}
+                    alt={item.productName}
+                  />
+                  <h1 className="text-base font-semibold text-gray-800 text-center px-2 poppins">£{item.productPrice}</h1>
+                  <h1 className="text-sm text-gray-800 text-center px-2 poppins">
+                    {item.productName}
+                  </h1>
+      
+                </div>
 
-          </div>
-          ) 
+                <div className="mt-4 px-4 pb-4">
+                  <hr className="my-3 border-gray-200" />
+                  <div className="flex justify-center">
+                    <Link
+                      to={`/product/${item._id}`}
+                      className="uppercase text-sm px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 rounded-full poppins shadow-sm"
+                    >
+                      View More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
         })}
+        
+        
         </div>
         <HotSelling/>
         </>
