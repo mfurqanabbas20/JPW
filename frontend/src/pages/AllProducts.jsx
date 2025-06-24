@@ -59,7 +59,7 @@ const AllProducts = () => {
             <div>
             <hr className='my-4 border-gray-300' />
             <div className='flex items-center justify-center'>
-                <Link className='cursor-pointer text-blue-600 uppercase border border-blue-500 px-2 py-1' to={`/product/${item._id}`}>View More</Link>
+                <Link className='cursor-pointer text-blue-600 uppercase border border-blue-500 px-2 py-1 poppins text-sm' to={`/product/${item._id}`}>View More</Link>
             </div>
             </div>
 
