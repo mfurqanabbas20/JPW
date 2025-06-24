@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import store1 from '../assets/about.jpg'
-
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -29,9 +29,9 @@ const AboutUs = () => {
               reliability, and performance. At JPW, we believe cleaning should
               be fast, efficient, and satisfying.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 transition duration-300 rounded-full px-6 py-2 text-white font-medium shadow-md">
+            <Link to='/all-products' className="bg-blue-600 hover:bg-blue-700 transition duration-300 rounded-full px-6 py-2 text-white font-medium shadow-md flex items-center justify-center">
               Visit Us
-            </button>
+            </Link>
           </div>
 
           {/* Image */}
