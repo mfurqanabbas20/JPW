@@ -21,7 +21,7 @@ const Navbar = () => {
         ?
         <ul className='flex flex-col gap-6 cursor-pointer z-10 fixed bg-white right-0 top-14 w-full h-screen overflow-hidden poppins items-center mt-10 font-semibold md:hidden'>
             <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>Home</Link>
-            <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#about'>About Us</Link>
+            <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/about-us'>About Us</Link>
             <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/all-products'>Products</Link>
             <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#services'>Services</Link>
             <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/contact-us'>Contact Us</Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="nav-items text-md max-md:hidden">
             <ul className='flex gap-6 cursor-pointer'>
               <Link className='hover:bg-blue-200 rounded-sm p-3' to='/'>Home</Link>
-              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#about'>About Us</Link>
+              <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/about-us'>About Us</Link>
               <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/all-products'>Products</Link>
               <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/#services'>Services</Link>
               <Link onClick={() => setSelectedHam(false)} className='hover:bg-blue-200 rounded-sm p-3' to='/contact-us'>Contact Us</Link>

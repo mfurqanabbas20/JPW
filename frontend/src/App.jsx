@@ -7,6 +7,7 @@ import AllProducts from './pages/AllProducts'
 import { ToastContainer } from 'react-toastify'
 import { useEffect } from 'react'
 import Contact from './pages/Contact'
+import AboutUs from './pages/AboutUs'
 
 function ScrollToHashElement() {  
   const location = useLocation()
@@ -30,6 +31,8 @@ function App() {
       <Route path='/product/:id' element={<Product/>} />
       <Route path='/all-products' element={<AllProducts/>} />
       <Route path='/contact-us' element={<Contact/>} />
+      <Route path='/about-us' element={<AboutUs/>} />
+
       <Route path='/product/order-successful' element={<OrderConfirm/>} />
       <Route path='/admin/' element={<Admin/>} />
       <Route path='/admin/add-products' element={<Admin/>} />
