@@ -55,7 +55,7 @@ const UserInfo = ({product, productQuantity}) => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-center mb-8">
+      <h1 className="text-2xl font-bold text-center mb-8 poppins">
         Provide Us Information
       </h1>
       <div class="max-w-md mx-auto">
