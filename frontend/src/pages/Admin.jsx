@@ -160,6 +160,62 @@ const AddProduct = () => {
   )
 }
 
+const Queries = () => {
+  const [queries, setQueries] = useState([])
+  
+  const fetchQueries = async () => {
+    const res = await axios.get('https://jpw-flax.vercel.app/api/contact/all-queries')
+    console.log('Quereis', res)
+    setQueries(res.data.queries)
+  }
+
+  const handleDelete = async(id) => {
+    const res = await axios.delete('https://jpw-flax.vercel.app/api/contact/delete-query')
+  }
+
+  useEffect(() => {
+    fetchQueries()
+  }, [])
+
+  return(
+    <div className="my-8">
+      {
+           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase dark:text-gray-600">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                User Name
+              </th>
+              <th scope="col" className="px-6 py-3">
+                User Email
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Message
+              </th>
+              <th scope="col" className="px-6 py-3">
+                
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {queries?.map((item) => {
+              console.log('queries', item)
+              return (
+                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                  <td className="px-6 py-4">{item.name}</td>
+                  <td className="px-6 py-4">{item.email}</td>
+                  <td className="px-6 py-4">{item.message}</td>
+                  <td onClick={() => handleDelete(item._id)} className="px-6 py-4 cursor-pointer"><i className="fa-solid fa-trash"></i></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      }
+    </div>
+  )
+}
+
 
 
 const Admin = () => {
@@ -182,6 +238,14 @@ const Admin = () => {
     await axios.put(`https://jpw-flax.vercel.app/api/order/update-status/${order._id}`, {value})
   }
 
+  const handleDelete = async (id) => {
+    const res = await axios.delete(`https://jpw-flax.vercel.app/api/order/delete-order/${id}`)
+    toast.success('Delete successfully', {
+      position: 'bottom-left',
+      autoClose: 2000
+    })
+  }
+
   return (
     <div className="All Orders">
       <Navbar />
@@ -189,12 +253,13 @@ const Admin = () => {
       <div className="flex gap-6 px-8 my-4 cursor-pointer">
         <h1 onClick={() => setSelectedTab('orders')} className={`${selectedTab === 'orders' ? "font-bold" : ""}`}>All Orders</h1>
         <h1 onClick={() => setSelectedTab('products')} className={`${selectedTab === 'products' ? "font-bold" : ""}`}>Add Products</h1>
+        <h1 onClick={() => setSelectedTab('queries')} className={`${selectedTab === 'queries' ? "font-bold" : ""}`}>All Queries</h1>
+
       </div>
       {
         selectedTab === 'orders'
         ?
         <div className="relative overflow-x-auto">
-          <h1 className="text-3xl font-bold text-center my-5">All Orders</h1>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase dark:text-gray-600">
             <tr>
@@ -219,6 +284,9 @@ const Admin = () => {
               <th scope="col" className="px-6 py-3">
                 Status
               </th>
+              <th scope="col" className="px-6 py-3">
+                
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -236,7 +304,6 @@ const Admin = () => {
                   <td className="px-6 py-4">{item.userAddress}</td>
                   <td className="px-6 py-4">{item.productPrice.toFixed(2)}</td>
                   <td className="px-6 py-4">{item.productQuantity}</td>
-
                   <td className="px-6 py-4">
                     <select value={item.status} onChange={(e) => updateStatus(item, e)} name="" id="">
                         <option value="Ordered">Ordered</option>
@@ -244,12 +311,17 @@ const Admin = () => {
                         <option value="Delivered">Delivered</option>
                     </select>
                   </td>
+                  <td onClick={() => handleDelete(item._id)} className="px-6 py-4 cursor-pointer"><i className="fa-solid fa-trash"></i></td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-      </div>
+        </div>
+      :
+      selectedTab === 'queries'
+      ?
+      <Queries/>
       :
       <AddProduct/>
       }

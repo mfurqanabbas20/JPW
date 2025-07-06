@@ -12,6 +12,7 @@ const addProduct = async (req, res) => {
             productAvailableQuantity: req.body.productAvailableQuantity,
         }
 
+        console.log('product', product)
         await productModel.create(product)
 
         return res.status(200).json({success: true, message: 'Product Added'})

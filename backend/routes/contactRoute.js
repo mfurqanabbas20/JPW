@@ -1,9 +1,12 @@
 const express = require('express')
-const { addContact } = require('../controllers/contactController')
+const { addContact, allQueries } = require('../controllers/contactController')
 
 const contactRouter = express.Router()
 
-contactRouter.post('/add', addContact)
+contactRouter.post('/add-query', addContact)
+contactRouter.get('/all-queries', allQueries)
+contactRouter.delete('/delete-query/:id', allQueries)
+
 
 
 module.exports = contactRouter

@@ -32,7 +32,6 @@ function App() {
       <Route path='/all-products' element={<AllProducts/>} />
       <Route path='/contact-us' element={<Contact/>} />
       <Route path='/about-us' element={<AboutUs/>} />
-
       <Route path='/product/order-successful' element={<OrderConfirm/>} />
       <Route path='/admin/' element={<Admin/>} />
       <Route path='/admin/add-products' element={<Admin/>} />

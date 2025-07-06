@@ -9,11 +9,30 @@ const addContact = async (req, res) => {
         message: req.body.message
     }
     await contactModel.create(contact);
-    res.status(200).json({ message: 'Message saved' });
+    return res.status(200).json({ message: 'Message saved' });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to save message' });
+    return res.status(500).json({ error: 'Failed to save message' });
+  }
+}
+
+const allQueries = async (req, res) => {
+  try {
+    const queries = await contactModel.find({});
+    return res.status(200).json({queries: queries });
+  } catch (err) {
+    return res.status(500).json({ error: 'Failed to save message' });
+  }
+}
+
+const deleteQuery = async (req, res) => {
+  try {
+    const {id} = req.params;
+    await contactModel.findByIdAndDelete(id);
+    return res.status(200).json({message: 'Deleted successfully' });
+  } catch (err) {
+    return res.status(500).json({ error: 'Failed to save message' });
   }
 }
 
 
-module.exports = {addContact}
+module.exports = {addContact, allQueries, deleteQuery}

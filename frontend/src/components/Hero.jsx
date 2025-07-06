@@ -9,7 +9,7 @@ const Hero = () => {
         <Link to='/#about' className="flex items-center justify-center bg-blue-600/90 rounded-full w-28 h-10 text-white cursor-pointer">Learn More</Link>
         <Link to='/all-products' className="bg-white-600/90 rounded-full w-28 h-10 text-blue-600/90 border border-blue-600 cursor-pointer flex items-center justify-center">Shop Now</Link>
       </div>
-      <p className="poppins text-md text-md">Built for <span className="text-blue-700">Excellence</span></p>
+      <p className="poppins text-md text-md">Built for <span className="text-blue-600">Excellence</span></p>
       <img src={washer_banner} className='object-contain size-1/3 max-md:size-9/12' alt="" />
     </div>
   )

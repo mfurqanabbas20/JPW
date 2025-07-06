@@ -10,7 +10,7 @@ const AboutUs = () => {
       <div
         className="max-md:px-4 py-10 bg-gray-50 rounded-xl shadow-md"
       >
-        <h1 className="poppins text-3xl font-extrabold text-center text-blue-800">
+        <h1 className="poppins text-3xl font-extrabold text-center text-blue-800 my-4">
           About Us
         </h1>
         <div className="flex justify-center items-center gap-10 max-md:flex-col-reverse">
@@ -29,7 +29,7 @@ const AboutUs = () => {
               reliability, and performance. At JPW, we believe cleaning should
               be fast, efficient, and satisfying.
             </p>
-            <Link to='/all-products' className="bg-blue-600 hover:bg-blue-700 transition duration-300 rounded-full px-6 py-2 text-white font-medium shadow-md flex items-center justify-center">
+            <Link to='/all-products' className="bg-blue-600 hover:bg-blue-700 transition duration-300 rounded-full px-6 py-2 text-white font-medium shadow-md flex items-center justify-center w-40">
               Visit Us
             </Link>
           </div>
