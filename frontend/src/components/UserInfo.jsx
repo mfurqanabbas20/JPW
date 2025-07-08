@@ -42,7 +42,7 @@ const UserInfo = ({product, productQuantity}) => {
         }       
         const session = await axios.post("https://jpw-flax.vercel.app/order/create-checkout-session", body)
 
-        const result = stripe.redirectToCheckout({
+        const result = await stripe.redirectToCheckout({
           sessionId: session.data.id
         })
         
