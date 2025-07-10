@@ -28,7 +28,7 @@ const AllProducts = () => {
       }, [])
 
   return (
-    <div className='all-products'>
+    <div className='all-products min-h-screen flex flex-col justify-between'>
         <Navbar/>
         <h1 className="text-2xl font-bold my-3 mx-8 poppins">All Products</h1>
         <div className="poppins">

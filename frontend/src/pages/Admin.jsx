@@ -247,14 +247,12 @@ const Admin = () => {
   }
 
   return (
-    <div className="All Orders">
+    <div className="min-h-screen flex flex-col justify-between">
       <Navbar />
-
       <div className="flex gap-6 px-8 my-4 cursor-pointer">
         <h1 onClick={() => setSelectedTab('orders')} className={`${selectedTab === 'orders' ? "font-bold" : ""}`}>All Orders</h1>
         <h1 onClick={() => setSelectedTab('products')} className={`${selectedTab === 'products' ? "font-bold" : ""}`}>Add Products</h1>
         <h1 onClick={() => setSelectedTab('queries')} className={`${selectedTab === 'queries' ? "font-bold" : ""}`}>All Queries</h1>
-
       </div>
       {
         selectedTab === 'orders'
