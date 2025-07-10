@@ -58,11 +58,11 @@ const OrderConfirm = () => {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {data.product.productName}
+                    {data?.product?.productName}
                   </th>
-                  <td className="px-6 py-4 text-white">{data.order.variant}</td>
-                  <td className="px-6 py-4 text-white">{data.order.productQuantity}</td>
-                  <td className="px-6 py-4 text-white">£{data.product.productPrice * data.order.productQuantity}</td>
+                  <td className="px-6 py-4 text-white">{data?.order?.variant}</td>
+                  <td className="px-6 py-4 text-white">{data?.order?.productQuantity}</td>
+                  <td className="px-6 py-4 text-white">£{data?.product?.productPrice * data?.order?.productQuantity}</td>
                 </tr>
           </tbody>
         </table>
